@@ -1,0 +1,17 @@
+import smtplib
+
+object=smtplib.SMTP('smtp.gmail.com',587)
+object.ehlo()
+object.starttls()
+object.login('somraj21mondal@gmail.com','GOOGLE APP ID')
+
+subject='Testing python email'
+body1='i am Somraj Mondal'
+
+massage="subject:{}\n\n{}".format(subject,body1)
+
+listadd=['RECEIVER EMAIL']
+
+object.sendmail('somraj21mondal@gmail.com',listadd,massage)
+print('sent')
+object.quit()
